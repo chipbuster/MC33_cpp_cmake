@@ -1,8 +1,8 @@
-#include "source/MC33.cpp"
+//#include "source/MC33.cpp"
 //#include "source/grid3d.cpp"
 //#include "source/surface.cpp"
 
-//#include "include/MC33.h"
+#include "include/MC33.h"
 
 #include <iostream>
 #include <igl/read_triangle_mesh.h>

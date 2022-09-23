@@ -94,11 +94,13 @@ include(tbb)
 # Add your project files
 # Create an executable
 file(GLOB SRCFILES  
-    include/*.h
-    source/*.cpp
-    source/*.h
-    *.cpp)
+    main.cpp)
+
+file(GLOB MC33_SRCFILES
+    source/libMC33++.cpp)
     
+
+add_library(MC33++ STATIC ${MC33_SRCFILES})
 add_executable(
         ${PROJECT_NAME}_bin
         ${SRCFILES}
@@ -109,6 +111,7 @@ set_target_properties(${PROJECT_NAME}_bin PROPERTIES CXX_STANDARD_REQUIRED ON)
 
 # Link settings
 target_link_libraries( ${PROJECT_NAME}_bin 
+        MC33++
         polyscope 
         TBB::tbb 
         tbb_static 
